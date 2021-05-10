@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package domain;
 
 /**
  * @author ZhouHu
