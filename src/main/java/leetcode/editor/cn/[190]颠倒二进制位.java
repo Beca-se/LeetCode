@@ -74,6 +74,7 @@ package leetcode.editor.cn;
 class ReverseBits {
     public static void main(String[] args) {
         Solution solution = new ReverseBits().new Solution();
+        System.out.println(solution.reverseBits(43261596));
         System.out.println(Integer.toBinaryString(solution.reverseBits(43261596)));
     }
 
@@ -81,24 +82,16 @@ class ReverseBits {
     public class Solution {
         // you need treat n as an unsigned value
         public int reverseBits(int n) {
-            System.out.println(Integer.toBinaryString(n));
             // 二进制是00000000000000000000000000000000
             int result = 0;
             // 如果是奇数则为false
-            boolean flag = false;
-            for (int i = 1; i <= 32; i++) {
+            for (int i = 0; i < 32; i++) {
                 // 判断尾数位是否是1
-                flag = (n & 1) == 1;
-                // 如果是奇数,需要将末尾变为1
-                if (flag) {
-                    // 只会将最后一位改为1
-                    result = result | 1;
-                }
+                result = (result << 1);
+                result |= (n & 1);
                 n = n >>> 1;
-                result = result << 1;
             }
             return result;
-
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

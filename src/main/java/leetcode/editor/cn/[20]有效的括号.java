@@ -69,6 +69,9 @@ class ValidParentheses {
         public boolean isValid(String s) {
             Stack<Character> cache = new Stack<>();
 
+            /*
+             * 利用栈的特性 当遇到})] 弹出上一个元素比较,如果能配对就继续,不能直接返回false
+             */
             for (char c : s.toCharArray()) {
                 if (c == '}' || c == ']' || c == ')') {
                     if (cache.isEmpty()) {

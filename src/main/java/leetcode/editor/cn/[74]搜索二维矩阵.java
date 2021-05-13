@@ -77,9 +77,9 @@ class SearchA2dMatrix {
             }
             int left = 0;
             int mid;
-            right=right-1;
+            right = right - 1;
             while (left <= right) {
-                mid = (left + right) / 2;
+                mid = left + (right - left) / 2;
                 if (matrix[mid] == target) {
                     return mid;
                 } else if (matrix[mid] > target) {
