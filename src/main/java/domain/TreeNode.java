@@ -3,7 +3,7 @@ package domain;
 /**
  * @author Administrator
  * @Class Name TreeNode
- * @Desc
+ * @Desc 二叉树基础结构
  * @create: 2020-10-29 17:25
  **/
 public class TreeNode {

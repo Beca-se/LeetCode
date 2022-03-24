@@ -3,7 +3,7 @@ package domain;
 /**
  * @author ZhouHu
  * @Class Name ListNode
- * @Desc TODO
+ * @Desc 链表基础结构
  * @create: 2020-09-26 01:58
  **/
 public class ListNode {
