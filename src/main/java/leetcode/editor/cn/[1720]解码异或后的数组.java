@@ -49,13 +49,17 @@ class DecodeXoredArray {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] decode(int[] encoded, int first) {
-            int[] result = new int[encoded.length + 1];
-            result[0] = first;
+            // 原始数组长度为encoded的长度+1
+            int[] ans = new int[encoded.length + 1];
+            // arr 的第一个元素 first（arr[0]）。
+            ans[0] = first;
+            // encoded[i] = arr[i] XOR arr[i + 1]
+            // encoded[0]  = arr[0] ^ arr[1]
+            // 现在我们知道了arr[0], 那么 arr[0] ^ arr[1] ^ arr[0] = arr[1] = encoded[0] ^ arr[0]
             for (int i = 0; i < encoded.length; i++) {
-                result[i + 1] = encoded[i] ^ result[i];
+                ans[i + 1] = encoded[i] ^ ans[i];
             }
-
-            return result;
+            return ans;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
