@@ -52,9 +52,11 @@ class GenerateAStringWithCharactersThatHaveOddCounts {
     class Solution {
         public String generateTheString(int n) {
             char[] arr = new char[n];
+            // 首先全部填充a
             for (int i = 0; i < n; i++) {
                 arr[i] = 'a';
             }
+            // 如果n是偶数.将第一位替换成b
             if ((n & 1) == 0) {
                 arr[0] = 'b';
             }
