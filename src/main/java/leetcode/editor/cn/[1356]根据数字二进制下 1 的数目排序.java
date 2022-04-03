@@ -69,13 +69,22 @@ class SortIntegersByTheNumberOf1Bits {
         public int[] sortByBits(int[] arr) {
             // 核心思想 将1的个数 调整到最高位
             for (int i = 0; i < arr.length; i++) {
-                arr[i] = Integer.bitCount(arr[i]) * 10000000 + arr[i];
+                arr[i] = bitCount(arr[i]) * 100000 + arr[i];
             }
             Arrays.sort(arr);
             for (int i = 0; i < arr.length; i++) {
-                arr[i] = arr[i] % 10000000;
+                arr[i] = arr[i] % 100000;
             }
             return arr;
+        }
+
+        private int bitCount(int n) {
+            int ans = 0;
+            while (n > 0) {
+                ans++;
+                n &= (n - 1);
+            }
+            return ans;
         }
 
 

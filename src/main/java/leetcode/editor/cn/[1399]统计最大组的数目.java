@@ -47,6 +47,7 @@ package leetcode.editor.cn;
 class CountLargestGroup {
     public static void main(String[] args) {
         Solution solution = new CountLargestGroup().new Solution();
+        solution.countLargestGroup(8000);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -54,13 +55,9 @@ class CountLargestGroup {
         public int countLargestGroup(int n) {
             // 最大值为 9+9+9+9
             int[] arr = new int[37];
-            int maxValue = 0;
+            int maxValue = 0, key;
             for (int i = 1; i <= n; ++i) {
-                int key = 0, i0 = i;
-                while (i0 != 0) {
-                    key += i0 % 10;
-                    i0 /= 10;
-                }
+                key = sum(i);
                 arr[key]++;
                 maxValue = Math.max(maxValue, arr[key]);
             }
@@ -72,7 +69,24 @@ class CountLargestGroup {
             }
             return ans;
         }
+
+        /**
+         * 计算数字各位相加后的值
+         *
+         * @param n 要被计算的数
+         * @return 计算的结果
+         */
+        private int sum(int n) {
+            int key = 0;
+            while (n != 0) {
+                key += n % 10;
+                n /= 10;
+            }
+            return key;
+        }
     }
+
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
