@@ -1,6 +1,6 @@
 # LeetCode
 LeetCode刷题
-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
+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
 模板配置:
 
 ![](img/image-20220324164003559.png)
