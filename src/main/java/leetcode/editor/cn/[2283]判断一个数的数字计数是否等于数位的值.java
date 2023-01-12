@@ -50,13 +50,16 @@ class CheckIfNumberHasEqualDigitCountAndDigitValue {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean digitCount(String num) {
+            // 长度为 1~10, 用长度为10的数组计数
             int[] count = new int[10];
 
+            // 计数
             for (int i = 0; i < num.length(); i++) {
                 char c = num.charAt(i);
                 count[c - '0']++;
             }
             for (int i = 0; i < num.length(); i++) {
+                // 判断是否匹配
                 if (count[i] != num.charAt(i) - '0') {
                     return false;
                 }
